@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-verde-50: #f3f8f3;
+  --color-verde-100: #e0ebe0;
+  --color-verde-300: #9dc09d;
+  --color-verde-500: #4a7c4a;
+  --color-verde-600: #3d6640;
+  --color-verde-700: #2f5033;
+  --color-verde-900: #1a2e1c;
+
+  --color-naranja-50: #fff6e8;
+  --color-naranja-100: #ffe9c7;
+  --color-naranja-200: #ffd28f;
+  --color-naranja-300: #ffb85c;
+  --color-naranja-400: #ffa02e;
+  --color-naranja-500: #ff8b00;
+  --color-naranja-600: #e07500;
+  --color-naranja-700: #b35c00;
+  --color-naranja-800: #8a4700;
+  --color-naranja-900: #663500;
+
+  --color-tierra-400: #c08a52;
+  --color-tierra-600: #8a5f33;
+
+  --color-ink: #1a1a1a;
+  --color-muted: #6b7280;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
+
+  --spacing-section: 6rem;
+
+  --animate-kenburns: kenburns 8s ease-out forwards;
+}
+
+body {
+  color: var(--color-ink);
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(-1%, -1%, 0);
+  }
+}
