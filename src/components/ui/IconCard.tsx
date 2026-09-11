@@ -1,38 +1,61 @@
 import type { LucideIcon } from "lucide-react";
 
-export type IconCardAccent = "verde" | "naranja";
+/** `light` = tarjeta sobre fondo claro; `dark` = sobre oliva-700 o grafito-900. */
+export type IconCardTone = "light" | "dark";
 
 export interface IconCardProps {
   icon: LucideIcon;
   title: string;
   description: string;
-  accent?: IconCardAccent;
+  tone?: IconCardTone;
   className?: string;
 }
 
-const accentClasses: Record<IconCardAccent, string> = {
-  verde: "bg-gradient-to-br from-verde-500 to-verde-700 text-white shadow-verde-900/20",
-  naranja: "bg-gradient-to-br from-naranja-400 to-naranja-600 text-white shadow-naranja-900/20",
+const toneClasses: Record<
+  IconCardTone,
+  { card: string; icon: string; title: string; description: string }
+> = {
+  light: {
+    card: "border-grafito-100 bg-white hover:border-oliva-300",
+    // El naranja se usa solo en el icono: superficie mínima.
+    icon: "bg-crema-100 text-naranja-600",
+    title: "text-grafito-900",
+    description: "text-grafito-500",
+  },
+  dark: {
+    card: "border-crema-50/15 bg-crema-50/5 hover:border-crema-50/30",
+    icon: "bg-crema-50/10 text-naranja-500",
+    title: "text-crema-50",
+    description: "text-crema-100/80",
+  },
 };
 
 export default function IconCard({
   icon: Icon,
   title,
   description,
-  accent = "verde",
+  tone = "light",
   className = "",
 }: IconCardProps) {
+  const colors = toneClasses[tone];
+
   return (
     <div
-      className={`group rounded-2xl border border-verde-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-verde-200 hover:shadow-lg ${className}`.trim()}
+      className={`group flex h-full flex-col rounded-lg border p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${colors.card} ${className}`.trim()}
     >
       <div
-        className={`flex h-12 w-12 items-center justify-center rounded-full shadow-sm transition-transform duration-300 group-hover:scale-105 ${accentClasses[accent]}`}
+        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-md transition-transform duration-300 group-hover:scale-105 ${colors.icon}`}
       >
-        <Icon size={22} />
+        <Icon size={22} strokeWidth={1.75} aria-hidden="true" />
       </div>
-      <h3 className="mt-4 font-display text-lg font-semibold text-ink">{title}</h3>
-      <p className="mt-2 text-sm text-muted">{description}</p>
+      <h3
+        className={`mt-5 font-display text-lg uppercase tracking-tight text-balance ${colors.title}`}
+      >
+        {title}
+      </h3>
+      <p className={`mt-3 text-sm leading-relaxed ${colors.description}`}>
+        {description}
+      </p>
     </div>
   );
 }

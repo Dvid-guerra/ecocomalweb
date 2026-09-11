@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 @theme {
+  /* --------------------------------------------------------------------
+   * Brand kit oficial de Ecocomal — NO modificar estas dos escalas.
+   * Verde: acentos y estados. Naranja: CTAs, subrayados activos, iconos
+   * y logo (máx. ~5% de la superficie de pantalla, nunca fondos amplios).
+   * ------------------------------------------------------------------ */
   --color-verde-50: #f3f8f3;
   --color-verde-100: #e0ebe0;
   --color-verde-300: #9dc09d;
@@ -20,14 +25,35 @@
   --color-naranja-800: #8a4700;
   --color-naranja-900: #663500;
 
+  /* Verde oliva profundo — superficies corporativas */
+  --color-oliva-50: #f5f7f0;
+  --color-oliva-100: #e7ecdc;
+  --color-oliva-300: #b3c191;
+  --color-oliva-500: #6b7f47;
+  --color-oliva-700: #3f4d29;
+  --color-oliva-900: #232b17;
+
+  /* Grafito — texto y secciones técnicas */
+  --color-grafito-50: #f6f7f8;
+  --color-grafito-100: #e9ebed;
+  --color-grafito-300: #b6bcc2;
+  --color-grafito-500: #6b747c;
+  --color-grafito-700: #3a4147;
+  --color-grafito-800: #262b30;
+  --color-grafito-900: #16191c;
+
+  /* Terracota / crema — calidez cultural */
+  --color-terracota-400: #b9663a;
+  --color-terracota-600: #8a4726;
+  --color-crema-50: #faf7f2;
+  --color-crema-100: #f2ebe0;
+
+  /* Tierra — se conserva por compatibilidad con el brand kit impreso */
   --color-tierra-400: #c08a52;
   --color-tierra-600: #8a5f33;
 
-  --color-ink: #1a1a1a;
-  --color-muted: #6b7280;
-
   --font-sans: var(--font-inter);
-  --font-display: var(--font-poppins);
+  --font-display: var(--font-oswald);
 
   --spacing-section: 6rem;
 
@@ -35,7 +61,13 @@
 }
 
 body {
-  color: var(--color-ink);
+  background-color: var(--color-crema-50);
+  color: var(--color-grafito-800);
+}
+
+::selection {
+  background-color: var(--color-naranja-500);
+  color: var(--color-grafito-900);
 }
 
 @keyframes kenburns {

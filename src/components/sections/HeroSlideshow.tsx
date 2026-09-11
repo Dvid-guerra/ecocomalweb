@@ -39,6 +39,10 @@ function getPrefersReducedMotionServer() {
   return false;
 }
 
+/**
+ * Fallback del hero para móvil y conexiones con ahorro de datos: fotografías
+ * reales en lugar del vídeo. El overlay de legibilidad lo aporta HeroMedia.
+ */
 export default function HeroSlideshow() {
   const [activeIndex, setActiveIndex] = useState(0);
   const prefersReducedMotion = useSyncExternalStore(
@@ -59,7 +63,7 @@ export default function HeroSlideshow() {
   }, [motionEnabled]);
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden">
       {FOTOS.map((foto, index) => {
         const isActive = index === activeIndex;
         return (
@@ -76,7 +80,6 @@ export default function HeroSlideshow() {
               fill
               sizes="100vw"
               priority={index === 0}
-              loading={index === 0 ? undefined : "eager"}
               className={`object-cover ${
                 isActive && motionEnabled ? "animate-kenburns" : ""
               }`}
@@ -84,9 +87,6 @@ export default function HeroSlideshow() {
           </div>
         );
       })}
-
-      <div className="absolute inset-0 bg-gradient-to-r from-verde-900/85 via-verde-900/40 to-verde-900/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-verde-900/70 via-transparent to-transparent" />
     </div>
   );
 }
