@@ -77,6 +77,7 @@ export default function FormularioContacto() {
   const idTelefono = `${idBase}-telefono`;
   const idMotivo = `${idBase}-motivo`;
   const idMensaje = `${idBase}-mensaje`;
+  const idSitioWeb = `${idBase}-sitio-web`;
 
   return (
     <form
@@ -84,6 +85,24 @@ export default function FormularioContacto() {
       noValidate
       className="flex flex-col gap-5 rounded-lg border border-grafito-100 bg-white p-6 shadow-sm sm:p-8"
     >
+      {/*
+        Trampa anti-spam. Se saca del flujo visual en lugar de usar `hidden`:
+        muchos bots ignoran los campos con display:none, pero rellenan este.
+        aria-hidden y tabIndex={-1} lo mantienen fuera del alcance de lectores
+        de pantalla y de la navegación por teclado, así que nadie lo encuentra.
+      */}
+      <div className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
+        <label htmlFor={idSitioWeb}>No rellenes este campo</label>
+        <input
+          id={idSitioWeb}
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          {...register("sitioWeb")}
+        />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label

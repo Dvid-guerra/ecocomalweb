@@ -18,6 +18,13 @@ export interface ContactoFormValues {
   telefono: string;
   motivo: Motivo | "";
   mensaje: string;
+  /**
+   * Trampa anti-spam: el campo va oculto en el formulario, así que una persona
+   * nunca lo rellena y un bot que completa todo el formulario sí. Se comprueba
+   * en el servidor. No se valida como los demás campos —un valor aquí no es un
+   * error que corregir— y nunca se muestra ni se envía por correo.
+   */
+  sitioWeb: string;
 }
 
 export type ContactoErrores = Partial<
@@ -37,6 +44,7 @@ export const VALORES_INICIALES: ContactoFormValues = {
   telefono: "",
   motivo: "",
   mensaje: "",
+  sitioWeb: "",
 };
 
 const CORREO_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
