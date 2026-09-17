@@ -170,10 +170,15 @@ export default function ContadorImpacto() {
           })}
         </div>
 
-        <p className="mt-10 text-center text-[11px] leading-relaxed text-grafito-300 sm:text-left">
-          {/* TODO: fuente y año de las cifras — confirmar con el cliente */}
-          TODO: fuente y año de las cifras — confirmar con el cliente
-        </p>
+        {/*
+          TODO: dato real pendiente — fuente y año de las cifras. Cuando el
+          cliente los confirme, reponer aquí la nota al pie:
+          <p className="mt-10 text-center text-[11px] leading-relaxed text-grafito-300 sm:text-left">
+            Fuente: …, 20XX.
+          </p>
+          Hasta entonces no se publica nada: una cifra de impacto sin fuente es
+          mejor dejarla sin atribuir que atribuirla mal.
+        */}
       </Container>
     </section>
   );

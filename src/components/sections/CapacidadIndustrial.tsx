@@ -123,11 +123,14 @@ export default function CapacidadIndustrial() {
                           className="object-cover"
                         />
                       ) : (
-                        <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-crema-100/50">
-                          <Icon size={36} strokeWidth={1.25} aria-hidden="true" />
-                          <span className="px-4 text-center text-[11px] uppercase tracking-[0.16em]">
-                            TODO: fotografía real pendiente
-                          </span>
+                        /*
+                          Marcador mientras no haya foto: solo el icono del
+                          activo. El título y la descripción van en el
+                          figcaption de abajo, así que el hueco se lee como una
+                          decisión de diseño y no como una imagen rota.
+                        */
+                        <div className="flex h-full w-full items-center justify-center text-crema-100/40">
+                          <Icon size={40} strokeWidth={1.25} aria-hidden="true" />
                         </div>
                       )}
                     </div>
