@@ -105,6 +105,17 @@ export default function ModelosPage() {
             );
           })}
         </div>
+
+        <p className="mt-10 text-sm text-grafito-500">
+          ¿Buscas materiales, medidas y reducción de emisiones?{" "}
+          <Link
+            href="/modelos/catalogo"
+            className="font-medium text-oliva-700 underline underline-offset-4 transition-colors hover:text-grafito-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-oliva-700"
+          >
+            Consulta el catálogo de modelos
+          </Link>
+          .
+        </p>
       </Section>
 
       <CtaBand

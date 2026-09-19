@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Flame, TreePine, Wind, Wrench } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Heading from "@/components/ui/Heading";
@@ -110,10 +111,21 @@ export default function ResidencialPage() {
         </ol>
 
         {/*
-          TODO: dato real pendiente — modelos concretos con nombre comercial,
-          dimensiones, materiales, peso y rango de precio. No publicar
-          especificaciones sin que el cliente las confirme.
+          TODO: dato real pendiente — peso y rango de precio por modelo. El
+          resto de especificaciones ya está publicado en /modelos/catalogo,
+          transcrito de las fichas técnicas oficiales.
         */}
+        <p className="mt-12 text-sm text-grafito-500">
+          Las especificaciones de cada modelo —estructura, comal, chimenea y
+          reducción de emisiones— están en el{" "}
+          <Link
+            href="/modelos/catalogo"
+            className="font-medium text-oliva-700 underline underline-offset-4 transition-colors hover:text-grafito-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-oliva-700"
+          >
+            catálogo de modelos
+          </Link>
+          .
+        </p>
       </Section>
 
       <CtaBand

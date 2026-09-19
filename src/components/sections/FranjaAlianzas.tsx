@@ -19,24 +19,39 @@ export default function FranjaAlianzas() {
           </h2>
 
           <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-8 sm:gap-x-14">
-            {ALIANZAS.map((alianza) => (
-              <li key={alianza.nombre} className="flex items-center">
-                {alianza.logo ? (
-                  <Image
-                    src={alianza.logo}
-                    alt={alianza.nombre}
-                    width={200}
-                    height={80}
-                    className="h-10 w-auto opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-12"
-                  />
-                ) : (
-                  // Respaldo textual mientras no haya logo autorizado.
-                  <span className="font-display text-sm uppercase tracking-[0.14em] text-grafito-300 transition-colors duration-300 hover:text-grafito-700 sm:text-base">
-                    {alianza.nombre}
-                  </span>
-                )}
-              </li>
-            ))}
+            {ALIANZAS.map((alianza) => {
+              const marca = alianza.logo ? (
+                <Image
+                  src={alianza.logo}
+                  alt={alianza.nombre}
+                  width={200}
+                  height={80}
+                  className="h-10 w-auto opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-12"
+                />
+              ) : (
+                // Respaldo textual mientras no haya logo autorizado.
+                <span className="max-w-60 text-center font-display text-sm uppercase leading-tight tracking-[0.14em] text-grafito-300 transition-colors duration-300 hover:text-grafito-700 sm:text-base">
+                  {alianza.nombre}
+                </span>
+              );
+
+              return (
+                <li key={alianza.nombre} className="flex items-center">
+                  {alianza.sitio ? (
+                    <a
+                      href={alianza.sitio}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-oliva-700"
+                    >
+                      {marca}
+                    </a>
+                  ) : (
+                    marca
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </Reveal>
       </Container>

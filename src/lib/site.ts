@@ -39,6 +39,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/modelos",
     label: "Modelos y Soluciones",
     children: [
+      { href: "/modelos/catalogo", label: "Catálogo de Modelos" },
       { href: "/modelos/residencial", label: "Línea Residencial" },
       { href: "/modelos/proyectos", label: "Proyectos Masivos y Personalizados" },
     ],
@@ -52,6 +53,7 @@ export const ROUTES = [
   "/",
   "/quienes-somos",
   "/modelos",
+  "/modelos/catalogo",
   "/modelos/residencial",
   "/modelos/proyectos",
   "/impacto",

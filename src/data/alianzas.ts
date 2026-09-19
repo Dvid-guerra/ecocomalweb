@@ -6,21 +6,27 @@ export interface Alianza {
    * nombre en texto, de modo que el componente degrada bien sin imágenes.
    */
   logo: string | null;
-  /** Sitio web del socio, si se autoriza enlazarlo. */
+  /** Sitio web del socio. Si está presente, el nombre se vuelve enlace. */
   sitio?: string;
 }
 
 /**
  * Socios comerciales que aparecen en la franja "Confían en nosotros".
  *
- * TODO: confirmar lista completa (~10) y obtener logos + autorización de uso.
- * Solo las dos primeras entradas están confirmadas por el cliente; el resto
- * son marcadores y deben eliminarse o reemplazarse antes de publicar.
+ * TODO: obtener logos y autorización de uso de marca. Mientras tanto se
+ * muestran los nombres en texto, enlazados a su sitio cuando se conoce.
  */
 export const ALIANZAS: Alianza[] = [
-  { nombre: "Hotel Café del Sol", logo: null },
+  { nombre: "Microsol", logo: null, sitio: "https://microsol-int.com/" },
+  {
+    nombre: "Hotel Café del Sol",
+    logo: null,
+    sitio: "https://hotelcafedelsol.com/",
+  },
+  {
+    nombre: "Alianza Global contra el Hambre y la Pobreza",
+    logo: null,
+    sitio: "https://globalallianceagainsthungerandpoverty.org/es/",
+  },
   { nombre: "Vive Experiencia", logo: null },
-  // TODO: dato real pendiente — socio 3
-  // TODO: dato real pendiente — socio 4
-  // TODO: dato real pendiente — socio 5
 ];

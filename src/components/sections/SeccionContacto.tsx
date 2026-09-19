@@ -1,6 +1,7 @@
 import { Building2, FileDown, Home as HomeIcon } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import EnlacesRedes from "@/components/ui/EnlacesRedes";
 import Heading from "@/components/ui/Heading";
 import Reveal from "@/components/ui/Reveal";
 import FormularioContacto from "./FormularioContacto";
@@ -72,6 +73,8 @@ export default function SeccionContacto({
                 TODO: dato real pendiente — teléfono, correo y dirección de
                 Ecocomal. No publicar ningún dato de contacto sin confirmación.
               */}
+
+              <EnlacesRedes className="mt-10" />
 
               {conDossier && (
                 <Button

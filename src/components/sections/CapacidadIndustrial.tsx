@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Factory, FileDown, Truck, Warehouse, type LucideIcon } from "lucide-react";
 import Button from "@/components/ui/Button";
+import Carrusel, { type Foto } from "@/components/ui/Carrusel";
 import Container from "@/components/ui/Container";
 import Heading from "@/components/ui/Heading";
 import Reveal from "@/components/ui/Reveal";
@@ -11,13 +11,8 @@ interface ActivoCapacidad {
   titulo: string;
   descripcion: string;
   icon: LucideIcon;
-  /**
-   * Fotografía del activo.
-   * TODO: fotos reales en public/capacidad/. Mientras `src` sea null se
-   * muestra un marcador con el icono, sin imágenes rotas.
-   */
-  src: string | null;
-  alt: string;
+  /** Fotografías reales del activo; se recorren con las flechas del carrusel. */
+  fotos: Foto[];
 }
 
 const ACTIVOS: ActivoCapacidad[] = [
@@ -27,8 +22,16 @@ const ACTIVOS: ActivoCapacidad[] = [
     descripcion:
       "Línea de fabricación propia en Guatemala, con control de calidad por lote.",
     icon: Factory,
-    src: null,
-    alt: "Planta de producción de estufas Ecocomal",
+    fotos: [
+      {
+        src: "/capacidad/planta-1.jpg",
+        alt: "Operarios de Ecocomal desmoldando cuerpos de estufa en la línea de producción",
+      },
+      {
+        src: "/capacidad/planta-2.jpg",
+        alt: "Corte de lámina para la fabricación de planchas de estufa Ecocomal",
+      },
+    ],
   },
   {
     id: "bodegas",
@@ -36,17 +39,29 @@ const ACTIVOS: ActivoCapacidad[] = [
     descripcion:
       "Inventario en resguardo para sostener entregas escalonadas sin quiebre de stock.",
     icon: Warehouse,
-    src: null,
-    alt: "Bodega de almacenaje de Ecocomal",
+    fotos: [
+      {
+        src: "/capacidad/bodegas-1.jpg",
+        alt: "Hilera de cuerpos de estufa terminados en la bodega de Ecocomal",
+      },
+      {
+        src: "/capacidad/bodegas-2.jpg",
+        alt: "Cámaras de combustión de concreto apiladas en inventario",
+      },
+    ],
   },
   {
-    id: "flota",
-    titulo: "Flota de transporte",
+    id: "transporte",
+    titulo: "Transporte y logística",
     descripcion:
       "Distribución propia a los 22 departamentos, incluyendo acceso a comunidades rurales.",
     icon: Truck,
-    src: null,
-    alt: "Flota de transporte de Ecocomal",
+    fotos: [
+      {
+        src: "/capacidad/transporte-1.jpg",
+        alt: "Camión de reparto rotulado con el logotipo de Ecocomal",
+      },
+    ],
   },
 ];
 
@@ -98,7 +113,8 @@ export default function CapacidadIndustrial() {
           </Reveal>
         </div>
 
-        {/* Galería con desplazamiento por pasos: sin JS, accesible con teclado. */}
+        {/* Galería con desplazamiento por pasos; cada tarjeta recorre sus
+            propias fotos con las flechas del carrusel. */}
         <Reveal delay={150}>
           <ul
             className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:thin] sm:mt-16"
@@ -113,29 +129,21 @@ export default function CapacidadIndustrial() {
                   className="w-[85%] shrink-0 snap-start sm:w-[48%] lg:w-[32%]"
                 >
                   <figure className="flex h-full flex-col overflow-hidden rounded-lg border border-crema-50/20 bg-crema-50/5">
-                    <div className="relative aspect-[4/3] w-full bg-oliva-900">
-                      {activo.src ? (
-                        <Image
-                          src={activo.src}
-                          alt={activo.alt}
-                          fill
-                          sizes="(max-width: 640px) 85vw, (max-width: 1024px) 48vw, 32vw"
-                          className="object-cover"
-                        />
-                      ) : (
-                        /*
-                          Marcador mientras no haya foto: solo el icono del
-                          activo. El título y la descripción van en el
-                          figcaption de abajo, así que el hueco se lee como una
-                          decisión de diseño y no como una imagen rota.
-                        */
-                        <div className="flex h-full w-full items-center justify-center text-crema-100/40">
-                          <Icon size={40} strokeWidth={1.25} aria-hidden="true" />
-                        </div>
-                      )}
-                    </div>
+                    <Carrusel
+                      fotos={activo.fotos}
+                      etiqueta={activo.titulo}
+                      tono="oscuro"
+                      sizes="(max-width: 640px) 85vw, (max-width: 1024px) 48vw, 32vw"
+                      className="aspect-[4/3] w-full bg-oliva-900"
+                    />
                     <figcaption className="flex flex-1 flex-col gap-2 p-5">
-                      <h3 className="font-display text-base uppercase tracking-tight text-crema-50">
+                      <h3 className="flex items-center gap-2.5 font-display text-base uppercase tracking-tight text-crema-50">
+                        <Icon
+                          size={18}
+                          strokeWidth={1.75}
+                          aria-hidden="true"
+                          className="shrink-0 text-naranja-400"
+                        />
                         {activo.titulo}
                       </h3>
                       <p className="text-sm leading-relaxed text-crema-100/80">
