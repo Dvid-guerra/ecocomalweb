@@ -25,7 +25,7 @@ const beneficios = [
     icon: TreePine,
     title: "Menos leña, menos gasto",
     description:
-      "La cámara de combustión aprovecha mejor cada carga, con una reducción de hasta 70% en el consumo respecto al fuego abierto.",
+      "La cámara de combustión aprovecha mejor cada carga, con una reducción de hasta 60% en el consumo respecto al fuego abierto.",
   },
   {
     icon: Flame,

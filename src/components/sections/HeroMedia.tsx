@@ -25,13 +25,13 @@ export default function HeroMedia({ className = "" }: HeroMediaProps) {
         sobre toda la foto: así el titular mantiene contraste y la instalación
         sigue viéndose. Subir estos valores a la vez vuelve a tapar la imagen.
       */}
-      <div className="absolute inset-0 bg-grafito-900/40" aria-hidden="true" />
+      <div className="absolute inset-0 bg-grafito-900/30" aria-hidden="true" />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-grafito-900 via-grafito-900/35 to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-grafito-900/90 via-grafito-900/25 to-transparent"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-grafito-900/75 via-grafito-900/30 to-transparent"
+        className="absolute inset-0 bg-gradient-to-r from-grafito-900/60 via-grafito-900/20 to-transparent"
         aria-hidden="true"
       />
     </div>

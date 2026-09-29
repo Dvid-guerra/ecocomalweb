@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Flame } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import RoofDivider from "@/components/ui/RoofDivider";
@@ -12,7 +13,7 @@ import SeccionContacto from "@/components/sections/SeccionContacto";
 export const metadata: Metadata = {
   title: "Estufas ecológicas de leña para proyectos y hogares en Guatemala",
   description:
-    "15 años fabricando e instalando estufas ecológicas de leña en Guatemala. Capacidad industrial para licitaciones públicas, ONG y constructoras, y línea residencial con instalación acompañada.",
+    "Más de 15 años fabricando e instalando estufas ecológicas de leña en Guatemala. Capacidad industrial para licitaciones públicas, ONG y constructoras, y línea residencial con instalación acompañada.",
   alternates: { canonical: "/" },
 };
 
@@ -28,13 +29,20 @@ export default function Home() {
         <Container className="relative z-10">
           <div className="max-w-3xl">
             <h1 className="font-display text-[2rem] font-semibold uppercase leading-[1.05] tracking-tight text-balance text-white sm:text-5xl lg:text-6xl">
-              15 años transformando la energía rural en Guatemala
+              Más de 15 años transformando la energía rural en Guatemala
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-crema-100 sm:mt-6 sm:text-lg">
               Ingeniería que protege la salud, la economía y los bosques.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            {/* Dato de venta principal: va antes del CTA para que se lea como
+                razón para pulsarlo, no como pie de página del titular. */}
+            <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-naranja-500/45 bg-grafito-900/45 px-4 py-1.5 font-display text-sm uppercase tracking-[0.12em] text-naranja-300 backdrop-blur-sm sm:text-base">
+              <Flame size={18} strokeWidth={2} aria-hidden="true" className="shrink-0" />
+              Hasta 60% de ahorro
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button href="/modelos/proyectos" variant="cta" size="lg">
                 Proyectos institucionales y licitaciones
               </Button>

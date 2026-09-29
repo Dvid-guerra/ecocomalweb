@@ -26,14 +26,14 @@ const CIFRAS: CifraImpacto[] = [
   },
   {
     id: "hogares",
-    valor: 30000,
-    sufijo: "+",
-    etiqueta: "Hogares e historias transformadas en todo el país",
+    prefijo: "Más de",
+    valor: 35000,
+    etiqueta: "Hogares atendidos e historias transformadas en todo el país",
   },
   {
     id: "ahorro",
     prefijo: "Hasta",
-    valor: 70,
+    valor: 60,
     sufijo: "%",
     etiqueta: "De ahorro promedio en el consumo de leña",
   },
