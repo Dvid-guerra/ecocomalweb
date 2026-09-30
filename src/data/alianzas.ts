@@ -24,9 +24,9 @@ export const ALIANZAS: Alianza[] = [
     sitio: "https://hotelcafedelsol.com/",
   },
   {
-    nombre: "Alianza Global contra el Hambre y la Pobreza",
+    nombre: "Clean Cooking Alliance",
     logo: null,
-    sitio: "https://globalallianceagainsthungerandpoverty.org/es/",
+    sitio: "https://cleancooking.org/",
   },
   { nombre: "Vive Experiencia", logo: null },
 ];
