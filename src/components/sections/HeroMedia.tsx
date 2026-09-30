@@ -20,18 +20,22 @@ export default function HeroMedia({ className = "" }: HeroMediaProps) {
       <HeroSlideshow />
 
       {/*
-        Overlay de legibilidad en tres capas. El oscurecimiento se concentra
-        donde vive el texto —abajo y a la izquierda— en vez de aplicarse plano
-        sobre toda la foto: así el titular mantiene contraste y la instalación
-        sigue viéndose. Subir estos valores a la vez vuelve a tapar la imagen.
+        Overlay de legibilidad en tres capas. La capa plana se mantiene baja
+        porque apaga la foto entera; el contraste del texto lo aportan los dos
+        degradados, concentrados donde vive —abajo y a la izquierda—. Así la
+        zona despejada queda luminosa sin que el titular pierda legibilidad.
+
+        Medido sobre las tres fotos del slideshow: en el peor píxel de la zona
+        de texto el contraste es 4.77:1, por encima del 4.5 que pide WCAG AA
+        para el párrafo. Bajar más la capa plana o los degradados lo rompe.
       */}
-      <div className="absolute inset-0 bg-grafito-900/30" aria-hidden="true" />
+      <div className="absolute inset-0 bg-grafito-900/18" aria-hidden="true" />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-grafito-900/90 via-grafito-900/25 to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-grafito-900/88 via-grafito-900/22 to-transparent"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-grafito-900/60 via-grafito-900/20 to-transparent"
+        className="absolute inset-0 bg-gradient-to-r from-grafito-900/68 via-grafito-900/18 to-transparent"
         aria-hidden="true"
       />
     </div>

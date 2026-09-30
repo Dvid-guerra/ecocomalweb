@@ -28,10 +28,10 @@ export default function Home() {
 
         <Container className="relative z-10">
           <div className="max-w-3xl">
-            <h1 className="font-display text-[2rem] font-semibold uppercase leading-[1.05] tracking-tight text-balance text-white sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-[2rem] font-semibold uppercase leading-[1.05] tracking-tight text-balance text-white [text-shadow:0_2px_12px_rgb(22_25_28_/_0.45)] sm:text-5xl lg:text-6xl">
               Más de 15 años transformando la energía rural en Guatemala
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-crema-100 sm:mt-6 sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-white [text-shadow:0_1px_8px_rgb(22_25_28_/_0.5)] sm:mt-6 sm:text-lg">
               Ingeniería que protege la salud, la economía y los bosques.
             </p>
 
