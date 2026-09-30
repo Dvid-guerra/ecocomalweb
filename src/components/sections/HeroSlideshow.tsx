@@ -41,7 +41,7 @@ function getPrefersReducedMotionServer() {
 
 /**
  * Fallback del hero para móvil y conexiones con ahorro de datos: fotografías
- * reales en lugar del vídeo. El overlay de legibilidad lo aporta HeroMedia.
+ * reales en lugar del vídeo. La foto se muestra sin overlay.
  */
 export default function HeroSlideshow() {
   const [activeIndex, setActiveIndex] = useState(0);
