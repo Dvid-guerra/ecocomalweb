@@ -21,6 +21,18 @@ const FOTOS: Foto[] = [
     src: "/hero/instalacion-3.JPG",
     alt: "Instalación de estufa Ecocomal en vivienda",
   },
+  {
+    src: "/hero/instalacion-4.JPG",
+    alt: "Equipo de producción de Ecocomal frente a los rótulos de visión y misión de la planta",
+  },
+  {
+    src: "/hero/instalacion-5.JPG",
+    alt: "Dos operarios de Ecocomal en la planta, junto a cuerpos de estufa terminados",
+  },
+  {
+    src: "/hero/instalacion-6.JPG",
+    alt: "Operario de Ecocomal cortando lámina con soplete en el taller de fabricación",
+  },
 ];
 
 const DURACION = 6000;
