@@ -13,7 +13,7 @@ export interface ManifiestoPilaresProps {
 
 export default function ManifiestoPilares({
   eyebrow = "Manifiesto Ecocomal",
-  titulo = "Cuatro pilares que sostienen cada instalación",
+  titulo = "Cuatro pilares que sostienen nuestra visión y misión",
   subtitulo = "Un criterio de ingeniería, salud pública, protección ambiental, economía familiar e identidad cultural detrás de cada estufa que sale de nuestra planta.",
   id,
 }: ManifiestoPilaresProps) {
