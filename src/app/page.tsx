@@ -29,7 +29,7 @@ export default function Home() {
         <Container className="relative z-10">
           <div className="max-w-3xl">
             <h1 className="font-display text-[2rem] font-semibold uppercase leading-[1.05] tracking-tight text-balance text-white [text-shadow:0_2px_12px_rgb(22_25_28_/_0.45)] sm:text-5xl lg:text-6xl">
-              Más de 15 años transformando la energía rural en Guatemala
+              Más de 15 años cambiando la forma de cocinar en Guatemala
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white [text-shadow:0_1px_8px_rgb(22_25_28_/_0.5)] sm:mt-6 sm:text-lg">
               Ingeniería que protege la salud, la economía y los bosques.
@@ -37,9 +37,24 @@ export default function Home() {
 
             {/* Dato de venta principal: va antes del CTA para que se lea como
                 razón para pulsarlo, no como pie de página del titular. */}
-            <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-naranja-500/45 bg-grafito-900/45 px-4 py-1.5 font-display text-sm uppercase tracking-[0.12em] text-naranja-300 backdrop-blur-sm sm:text-base">
-              <Flame size={18} strokeWidth={2} aria-hidden="true" className="shrink-0" />
-              Hasta 60% de ahorro
+            {/* Ficha de dato, no frase: la cifra manda por jerarquía y por la
+                barra de acento, no por tamaño. El naranja como superficie
+                queda reservado a los CTA, así que aquí solo marca el filo. */}
+            <p className="mt-7 inline-flex items-center gap-4 rounded-r-md border-l-4 border-naranja-500 bg-grafito-900/60 py-3 pl-4 pr-6 backdrop-blur-sm">
+              <Flame
+                size={30}
+                strokeWidth={1.75}
+                aria-hidden="true"
+                className="shrink-0 text-naranja-400"
+              />
+              <span className="flex flex-col">
+                <span className="font-display text-2xl font-semibold uppercase leading-none tracking-tight text-naranja-300 sm:text-3xl">
+                  Hasta 60%
+                </span>{" "}
+                <span className="mt-1.5 font-display text-xs uppercase leading-none tracking-[0.18em] text-crema-100 sm:text-sm">
+                  menos consumo de leña
+                </span>
+              </span>
             </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -47,7 +62,7 @@ export default function Home() {
                 Proyectos institucionales y licitaciones
               </Button>
               <Button href="/modelos/residencial" variant="outline" size="lg">
-                Línea residencial
+                Adquiere la tuya
               </Button>
             </div>
           </div>

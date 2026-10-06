@@ -163,7 +163,7 @@ export default function ProyectosPage() {
         description="Envíanos las bases o el alcance estimado y te respondemos con una propuesta técnica y económica."
         ctaLabel="Iniciar conversación institucional"
         ctaHref="/contacto#formulario"
-        secondaryLabel="Ver línea residencial"
+        secondaryLabel="Adquiere la tuya"
         secondaryHref="/modelos/residencial"
       />
     </>
