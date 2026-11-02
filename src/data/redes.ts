@@ -1,6 +1,7 @@
 import {
   IconoFacebook,
   IconoInstagram,
+  IconoLinkedIn,
   IconoTikTok,
   type ComponenteIconoRed,
 } from "@/components/ui/IconosRedes";
@@ -20,14 +21,26 @@ export interface RedSocial {
 
 /**
  * Redes sociales de Ecocomal, en el orden en que se muestran.
- *
- * TODO: dato real pendiente — pegar la URL de cada perfil. Para añadir otra
- * red (YouTube, LinkedIn, WhatsApp...) añade aquí la entrada y su icono en
- * components/ui/IconosRedes.tsx.
  */
 export const REDES: RedSocial[] = [
-  { id: "instagram", nombre: "Instagram", url: "", Icono: IconoInstagram },
-  { id: "facebook", nombre: "Facebook", url: "", Icono: IconoFacebook },
+  {
+    id: "instagram",
+    nombre: "Instagram",
+    url: "https://www.instagram.com/ecocomal?srtk=bHJqdDBxOTg3cG1k&utm_source=qr",
+    Icono: IconoInstagram,
+  },
+  {
+    id: "facebook",
+    nombre: "Facebook",
+    url: "https://www.facebook.com/profile.php?id=100075851904833&locale=es_LA",
+    Icono: IconoFacebook,
+  },
+  {
+    id: "linkedin",
+    nombre: "LinkedIn",
+    url: "https://www.linkedin.com/in/marco-tulio-guerra-buezo-7b27651a/",
+    Icono: IconoLinkedIn,
+  },
   { id: "tiktok", nombre: "TikTok", url: "", Icono: IconoTikTok },
 ];
 

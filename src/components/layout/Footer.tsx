@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FileDown } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import EnlacesRedes from "@/components/ui/EnlacesRedes";
 import {
   DOSSIER_HREF,
   DOSSIER_LABEL,
@@ -29,6 +30,7 @@ export default function Footer() {
             combustión mejorada. Capacidad instalada para proyectos
             residenciales e institucionales en toda Guatemala.
           </p>
+          <EnlacesRedes tono="oscuro" className="mt-6" />
         </div>
 
         <div>
