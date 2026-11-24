@@ -5,6 +5,7 @@ import Heading from "@/components/ui/Heading";
 import IconCard from "@/components/ui/IconCard";
 import PageHero from "@/components/sections/PageHero";
 import CapacidadIndustrial from "@/components/sections/CapacidadIndustrial";
+import Equipo from "@/components/sections/Equipo";
 import CtaBand from "@/components/sections/CtaBand";
 
 export const metadata: Metadata = {
@@ -89,7 +90,9 @@ export default function QuienesSomosPage() {
         description="Somos una empresa guatemalteca que diseña, fabrica e instala estufas ecológicas de leña. Logística, infraestructura y calidad de servicio que hay detrás de cada estufa instalada."
       />
 
-      <Section>
+      <Equipo />
+
+      <Section variant="muted">
         <Heading
           eyebrow="Trayectoria"
           subtitle="De un problema doméstico a una operación con alcance nacional."
